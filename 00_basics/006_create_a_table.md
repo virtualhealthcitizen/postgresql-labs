@@ -14,7 +14,7 @@ table_constraints
 For example,
 
 ```sql
-CREATE TABLE IF NOT EXISTS accounts (
+CREATE TABLE accounts (
   user_id serial PRIMARY KEY,
   username VARCHAR ( 50 ) UNIQUE NOT NULL,
   password VARCHAR ( 50 ) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS accounts (
   last_login TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS roles (
+CREATE TABLE roles (
   role_id serial PRIMARY KEY,
   role_name VARCHAR ( 255 ) UNIQUE NOT NULL
 );
