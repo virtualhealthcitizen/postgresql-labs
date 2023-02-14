@@ -10,8 +10,6 @@ To change the PostgreSQL user's password, follow these steps:
    
 2. In the psql console, change the password and quit:
 
-   <br />
-
    ![02.png](img/02.png)
 
    As you can see in the above screenshot, `\q` exits the psql console.
