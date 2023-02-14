@@ -1,0 +1,51 @@
+### **Create a table**
+
+The general syntax to create a table is as follows:
+
+```sql
+CREATE TABLE [IF NOT EXISTS] table_name (
+column1 datatype(length) column_contraint,
+column2 datatype(length) column_contraint,
+column3 datatype(length) column_contraint,
+table_constraints
+);
+```
+
+For example,
+
+```sql
+CREATE TABLE IF NOT EXISTS accounts (
+  user_id serial PRIMARY KEY,
+  username VARCHAR ( 50 ) UNIQUE NOT NULL,
+  password VARCHAR ( 50 ) NOT NULL,
+  email VARCHAR ( 255 ) UNIQUE NOT NULL,
+  created_on TIMESTAMP NOT NULL,
+  last_login TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS roles (
+  role_id serial PRIMARY KEY,
+  role_name VARCHAR ( 255 ) UNIQUE NOT NULL
+);
+
+CREATE TABLE account_roles (
+  user_id INT NOT NULL,
+  role_id INT NOT NULL,
+  grant_date TIMESTAMP,
+  PRIMARY KEY (user_id, role_id),
+  FOREIGN KEY (role_id)
+  REFERENCES roles (role_id),
+  FOREIGN KEY (user_id)
+  REFERENCES accounts (user_id)
+);
+```
+
+![05.png](img/05.png)
+
+### **Column constraints**
+
+- `NOT NULL` - ensures that values in a column cannot be `NULL`
+- `UNIQUE` - ensures the values in a column are unique across the rows within the same table
+- `PRIMARY KEY` - a primary key column uniquely identifies rows in a table. A table can have only one primary key. The primary key constraint allows you to define the primary key of a table.
+- `CHECK` - a `CHECK` constraint ensures the data must satisfy a boolean expression.
+- `FOREIGN KEY` - ensures values in a column or a group of columns from a table exists in a column or group of columns in another table. Unlike the primary key, a table can have many foreign keys.
