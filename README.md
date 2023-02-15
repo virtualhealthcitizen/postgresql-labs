@@ -35,6 +35,6 @@ There are 15 tables **in the** DVD Rental database:
 - city - stores city names.
 - country - stores country names.
 
-![01.png](img%2F01.png)
+![01.png](img/01.png)
 
 The sample database (`dvdrental`) is located in the `/resources` directory, in the parent directory of this project. 
