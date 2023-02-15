@@ -1,4 +1,4 @@
-### **Login to postgres and launch psql**
+### **Log in to postgres and launch psql**
 
 ```shell
 sudo -u postgres psql
