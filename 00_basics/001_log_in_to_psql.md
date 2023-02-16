@@ -13,7 +13,7 @@ If this is your first time using PostgreSQL, or you haven't used it for a while 
 - User: `postgres`
 - Password: `postgres`
 
-<img src="img/01.png" width="500">
+<img src="img/01.png" width="500" />
 
 You can also specify both the `-U` and `-W` flags:
 
@@ -21,7 +21,7 @@ You can also specify both the `-U` and `-W` flags:
 psql -U postgres -W
 ```
 
-<img src="img/09.png" width="260">
+<img src="img/09.png" width="260" />
 
 
 - The `-U` flag stands for the user
@@ -31,12 +31,12 @@ psql -U postgres -W
 
 Open the pgAdmin application and enter the user password.
 
-<img src="img/06.png" width="500">
+<img src="img/06.png" width="500" />
 
 Expand **Servers** in the **Browser** menu and enter the password when prompted.
 
-<img src="img/07.png" width="500">
+<img src="img/07.png" width="500" />
 
 To connect to one of the databases shown in the **Browser** menu, select a given database.
 
-<img src="img/08.png" width="200">
+<img src="img/08.png" width="200" />

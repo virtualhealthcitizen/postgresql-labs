@@ -8,11 +8,11 @@
 
    where `db_name` is the name of the database you will be importing.
 
-   <img src="img/10.png" width="220">
+   <img src="img/10.png" width="220" />
 
 3. List the databases to confirm that the new database has been created.
 
-   <img src="img/11.png" width="500">
+   <img src="img/11.png" width="500" />
 
 4. Exit `psql`:
 
@@ -44,4 +44,4 @@
 
 9. Connect to the new database and view its contents to verify that is properly imported.
 
-   <img src="img/14.png" width="400">
+   <img src="img/14.png" width="400" />
