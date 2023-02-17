@@ -37,6 +37,6 @@ Expand **Servers** in the **Browser** menu and enter the password when prompted.
 
 <img src="img/07.png" width="500" />
 
-To connect to one of the databases shown in the **Browser** menu, select a given database.
+To connect to one of the databases shown in the **Browser** menu, select (left-click) a database.
 
 <img src="img/08.png" width="200" />
