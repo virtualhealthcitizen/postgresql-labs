@@ -144,3 +144,110 @@ Note that the <code>LEFT JOIN</code> is the same as the <code>LEFT OUTER JOIN</c
 The following Venn diagram illustrates the left join that returns rows from the left table which do now have matching rows from the right table:
 
 <img src="img/76.png" width="200" />
+
+## PostgreSQL right join
+
+The right join is a reversed version of the left join.
+The right join starts selecting data from the right table.
+It compares each value in the `fruit_b` column of every row in the right table (`basket_b`) with each value in the `fruit_a` column of every row in the left table (`basket_a`).
+
+If these values are not equal, the right join creates a new row that contains columns from both tables.
+
+In case these values are not equal, the right join also creates a new row that contains columns from both tables.
+However, it fills the columns in the left table with `NULL`.
+
+The following statement uses the right join to join the `basket_a` table with the `basket_b` table.
+
+```sql
+SELECT
+  a,
+  fruit_a,
+  b,
+  fruit_b
+FROM
+  basket_a
+RIGHT JOIN basket_b ON fruit_a = fruit_b;
+```
+
+Here is the output:
+
+<img src="img/77.png" width="310" />
+
+The following Venn diagram illustrates the right join:
+
+<img src="img/78.png" width="200" />
+
+Similarly, you can get rows from the right table that do not have matching rows from the left table by adding a `WHERE` clause as follows:
+
+```sql
+SELECT
+  a,
+  fruit_a,
+  b,
+  fruit_b
+FROM
+  basket_a
+RIGHT JOIN basket_b
+  ON fruit_a = fruit_b
+WHERE a IS NULL;
+```
+
+<img src="img/79.png" width="200" />
+
+<blockquote>
+The <code>RIGHT JOIN</code> and <code>RIGHT OUTER JOIN</code> are the same therefore you can use them interchangeably.
+</blockquote>
+
+The following Venn diagram illustrates the right join that returns rows from the right table that do not have matching rows in the left table.
+
+<img src="img/80.png" width="200" />
+
+## PostgreSQL full outer join
+
+The full outer join or full join returns a result set that contains all rows from both left and right tables, with the matching rows from both sides if available.
+In case there is no match, the columns of the table will be filled with `NULL`.
+
+```sql
+SELECT
+  a,
+  fruit_a,
+  b,
+  fruit_b
+FROM
+  basket_a
+FULL OUTER JOIN basket_b
+  ON fruit_a = fruit_b;
+```
+
+Output:
+
+<img src="img/81.png" width="200" />
+
+The following Venn diagram illustrates the full outer join:
+
+<img src="img/82.png" width="200" />
+
+To return rows in a table that do not have matching rows in the other, you use the full join with a `WHERE` clause like this:
+
+```sql
+SELECT
+  a,
+  fruit_a,
+  b,
+  fruit_b
+FROM
+  basket_a
+FULL JOIN basket_b
+  ON fruit_a = fruit_b
+WHERE a IS NULL OR b IS NULL;
+```
+
+<img src="img/83.png" width="240" />
+
+The following Venn diagram illustrates the full outer join that returns rows from a table that do not have the corresponding rows in the other table.
+
+<img src="img/84.png" width="200" />
+
+The following picture shows all the PostgreSQL joins discussed so far with the detailed syntax:
+
+<img src="img/85.png" width="600" />
