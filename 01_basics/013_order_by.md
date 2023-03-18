@@ -2,7 +2,7 @@
 
 In this tutorial, you will learn how to sort the result set returned from the `SELECT` statement by using the **PostgreSQL ORDER BY** clause.
 
-### Introduction to PostgreSQL ORDER BY clause
+### Introduction to PostgreSQL `ORDER BY` clause
 
 When you query data from a table, the `SELECT` statement returns rows in an unspecified order.
 To sort the rows of the result set, you use the `ORDER BY` clause in the `SELECT` statement.
@@ -19,7 +19,7 @@ FROM
 ORDER BY
    sort_expression_1 [ASC | DESC],
    ...
-   sort_expression_2 [ASC | DESC];
+   sort_expression_n [ASC | DESC];
 ```
 
 In this syntax:
@@ -57,11 +57,11 @@ ORDER BY
    first_name ASC;
 ```
 
-<img src="img/25.png">
+<img src="img/25.png" width="200" />
 
 <br/>
 
-<img src="img/26.png" width="350">
+<img src="img/26.png" width="310" />
 
 Since the `ASC` option is the default, it can be omitted in the `ORDER BY` clause.
 
@@ -130,7 +130,7 @@ When you sort rows that contain `NULL`, you can specify the order of `NULL` with
 
 The `NULLS FIRST` option places `NULL` before other non-null values and the `NULLS LAST` option places `NULL` after other non-null values.
 
-Creat a table for the demonstration:
+Create a table for the demonstration:
 
 ```sql
 -- create a new table

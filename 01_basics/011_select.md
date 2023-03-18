@@ -50,7 +50,7 @@ PostgreSQL evaluates the FROM clause before the `SELECT` clause in the `SELECT` 
 
 <blockquote>
 Note that the SQL keywords are case-insensitive.
-It means that `SELECT` is equivalent to `select` or `Select`.
+This means that <code>SELECT</code> is equivalent to <code>select</code> or <code>Select</code>.
 By convention, we will use all the SQL keywords in uppercase to make the queries easier to read.
 </blockquote>
 
@@ -81,7 +81,7 @@ The semicolon is not a part of the SQL statement.
 It is used to signal PostgreSQL the end of an SQL statement.
 The semicolon is also used to separate two SQL statements.
 
-#### 2) Example: Using PostgreSQL `SELECT` statement to query data from one column
+#### 2) Example: Using PostgreSQL `SELECT` statement to query data from multiple columns
 
 Suppose you just want to know the first name, last name and email of customers.
 You can specify these column names in the `SELECT` clause as shown in the following query:

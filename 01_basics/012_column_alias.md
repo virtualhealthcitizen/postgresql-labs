@@ -1,6 +1,6 @@
 **Summary**
 
-In this section, you will learn about PostgreSQL _column aliases_ and how to use column aliases to assign temporary names to columns in queries.
+This section discusses PostgreSQL _column aliases_ and how to use column aliases to assign temporary names to columns in queries.
 
 ### Introduction to the PostgreSQL column alias
 
@@ -15,6 +15,7 @@ FROM table_name;
 ```
 
 In this syntax, the `column_name` is assigned an alias `alias_name`.
+
 The `AS` keyword is optional, so you can omit it like this:
 
 ```sql

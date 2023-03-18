@@ -4,7 +4,7 @@
 
 #### Using `psql`
 
-From the psql command prompt, use the command:
+From the `psql` command prompt, use the command:
 
 ```shell
 \dt
@@ -29,4 +29,5 @@ WHERE schemaname != 'pg_catalog' AND
       schemaname != 'information_schema';
 ```
 
-In this query, a condition is used in the `WHERE` clause to filter system tables. If you omit the `WHERE` clause, you will get many tables including the system tables.
+In this query, a condition is used in the `WHERE` clause to filter system tables.
+If you omit the `WHERE` clause, you will get many tables including the system tables.
