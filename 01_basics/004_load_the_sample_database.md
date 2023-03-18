@@ -26,7 +26,7 @@
 
    `cd /Library/PostgreSQL/15/bin`
 
-6. In the `/resources` folder of this project, find the sample database `.zip` file: `dvdrental.zip`.
+6. In a new terminal, `cd` into the `/resources` folder of this project and find the sample database `.zip` file: `dvdrental.zip`.
 
 7. Run the command:
 
@@ -34,7 +34,7 @@
 
 8. Use the `pg_restore` tool to load data into the new database you created with the `CREATE DATABASE` statement in _step 2_.
 
-   `pg_restore -U postgres -d dvdrental /Users/admin/Documents/00_code-repos/postgresql-labs/resources/data/dvdrental.tar`
+   `pg_restore -U postgres -d dvdrental /Users/username/Documents/[...]/postgresql-labs/resources/data/dvdrental.tar`
 
    In this command:
    - The `-U postgres` option specifies the `postgres` user to log in to the PostgreSQL database server.
@@ -42,6 +42,6 @@
 
    After running this command, you will be prompted for a password. Enter the `postgres` user password.
 
-9. Connect to the new database and view its contents to verify that is properly imported.
+9. Connect to the new database and view its contents to verify that it is properly imported.
 
    <img src="img/14.png" width="400" />

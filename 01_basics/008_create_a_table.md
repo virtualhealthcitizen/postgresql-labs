@@ -49,3 +49,5 @@ CREATE TABLE account_roles (
 - `PRIMARY KEY` - a primary key column uniquely identifies rows in a table. A table can have only one primary key. The primary key constraint allows you to define the primary key of a table.
 - `CHECK` - a `CHECK` constraint ensures the data must satisfy a boolean expression.
 - `FOREIGN KEY` - ensures values in a column or a group of columns from a table exists in a column or group of columns in another table. Unlike the primary key, a table can have many foreign keys.
+
+

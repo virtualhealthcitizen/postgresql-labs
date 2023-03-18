@@ -2,7 +2,7 @@
 
 To change the PostgreSQL user's password, follow these steps:
 
-1. Log in to the psql console:
+1. Log in to the `psql` console:
 
    ```shell
    sudo -u postgres psql
@@ -12,7 +12,7 @@ To change the PostgreSQL user's password, follow these steps:
 
    ![02.png](img/02.png)
 
-   As you can see in the above screenshot, `\q` exits the psql console.
+   As you can see in the above screenshot, `\q` exits the `psql` console.
 
 The current user's password can be changed by simply issuing
 
