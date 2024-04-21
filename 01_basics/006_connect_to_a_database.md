@@ -27,3 +27,9 @@ psql -U postgres -d db_name
 The above command connects to the database `db_name` as the `postgres` user.
 
 The `-d` flag means **d**atabase.
+
+### Using Docker to connect a client session to the server
+
+```bash
+docker run -it --rm postgres:16 psql --host=host.docker.internal --username=postgres
+```

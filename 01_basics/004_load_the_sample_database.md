@@ -34,7 +34,7 @@
 
 8. Use the `pg_restore` tool to load data into the new database you created with the `CREATE DATABASE` statement in _step 2_.
 
-   `pg_restore -U postgres -d dvdrental /Users/username/Documents/[...]/postgresql-labs/resources/data/dvdrental.tar`
+   `pg_restore -U postgres -d dvdrental /Users/admin/Documents/00_code-repos/postgresql-labs/resources/data/dvdrental.tar`
 
    In this command:
    - The `-U postgres` option specifies the `postgres` user to log in to the PostgreSQL database server.
