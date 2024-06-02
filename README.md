@@ -18,7 +18,7 @@ See the below links for installation instructions:
 
 ### PostgreSQL sample database tables
 
-There are 15 tables **in the** DVD Rental database:
+There are 15 tables in the DVD Rental database:
 
 - actor - stores actors data including first name and last name.
 - film - stores film data such as title, release year, length, rating, etc.
@@ -35,6 +35,6 @@ There are 15 tables **in the** DVD Rental database:
 - city - stores city names.
 - country - stores country names.
 
-![01.png](img/01.png)
+![01.png](docs/img/01.png)
 
 The sample database (`dvdrental`) is located in the `/resources` directory, in the parent directory of this project. 

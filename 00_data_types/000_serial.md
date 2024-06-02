@@ -41,7 +41,7 @@ The PostgreSQL `SERIAL` pseudo-type has been classified into three types:
 - `SERIAL`
 - `BIGSERIAL`
 
-The following table contains all each `SERIAL` pseudo-type specification that is supported by PostgreSQL:
+The following table contains each `SERIAL` pseudo-type specification that is supported by PostgreSQL:
 
 | Name          | Storage Size | Range                    |
 |---------------|--------------|--------------------------|
@@ -55,9 +55,7 @@ Let's see different examples to understand how the PostgreSQL `SERIAL` pseudo-ty
 
 In the following PostgreSQL snippets, we are creating one new table with the `CREATE` command and inserting some values using the `INSERT` command.
 
-<blockquote>
-Note: The <code>PRIMARY KEY</code> constraint can, and often should, be defined for the <code>SERIAL</code> column because the <code>SERIAL</code> pseudo-type does not indirectly create an index on the column or make the column the primary key of a table.
-</blockquote>
+> **Note**: The `PRIMARY KEY` constraint can, and often should, be defined for the `SERIAL` column because the `SERIAL` pseudo-type does not indirectly create an index on the column or make the column the primary key of a table.
 
 ## Example 1: `cars` table
 
