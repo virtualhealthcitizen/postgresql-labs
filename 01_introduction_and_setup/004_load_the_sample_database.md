@@ -1,6 +1,6 @@
 ### **Load a database from an external data source**
 
-1. Launch the `psql` tool and log in (refer to [Log in to postgres and launch `psql`](./001_log_in_to_psql.md)).
+1. Launch the `psql` tool and log in (refer to [Log in to postgres and launch `psql`](001_log_in_to_psql.md)).
 
 2. Enter the following `CREATE DATABASE` statement:
    

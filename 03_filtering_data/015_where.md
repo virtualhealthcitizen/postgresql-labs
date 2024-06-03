@@ -56,7 +56,7 @@ To form the condition in the `WHERE` clause, you use comparison and logical oper
 Let's practice with some examples of using the `WHERE` clause.
 We will use a temporary test table similar to the `customer` table from the `dvdrental` sample database for demonstration.
 
-<img src="img/15.png" />
+<img src="../02_querying_data/img/15.png" />
 
 ### Setting Up a Temporary Test Database
 
