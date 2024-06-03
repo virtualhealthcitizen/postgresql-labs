@@ -37,4 +37,4 @@ There are 15 tables in the DVD Rental database:
 
 ![01.png](docs/img/01.png)
 
-The sample database (`dvdrental`) is located in the `/resources` directory, in the parent directory of this project. 
+The sample database (`dvdrental`) is located in the `/resources` directory, in the parent directory of this project.
