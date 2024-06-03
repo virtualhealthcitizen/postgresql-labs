@@ -1,14 +1,14 @@
-**Summary**
+# `SELECT DISTINCT`
 
 In this section, you will learn how to use the PostgreSQL `SELECT DISTINCT` clause to remove duplicate rows from a result set returned by a query.
 
-### Introduction to PostgreSQL `SELECT DISTINCT` clause
+## Introduction to PostgreSQL `SELECT DISTINCT` clause
 
 The `DISTINCT` clause is used in the `SELECT` statement to remove duplicate rows from a result set.
 The `DISTINCT` clause keeps one row for each group of duplicates.
 The `DISTINCT` clause can be applied to one or more columns in the **select list** of the `SELECT` statement.
 
-The following illustrates the syntax of the `DISTINCT` clause:
+### Syntax of the `DISTINCT` Clause
 
 ```sql
 SELECT
@@ -34,26 +34,40 @@ PostgreSQL also provides the `DISTINCT ON (expression)` to keep the "first" row 
 
 ```sql
 SELECT
-  DISTINCT ON (column1) column_alias
+  DISTINCT ON (column1) column1
   column2
 FROM
   table_name
 ORDER BY
-  column1
+  column1,
   column2;
 ```
 
-The order of rows returned from the `SELECT` statement is unspecified therefore the "first" row of each group of the duplicate is also unspecified.
+The order of rows returned from the `SELECT` statement is unspecified; therefore the "first" row of each group of the duplicate is also unspecified.
 
-It is good practice to always use the `ORDER BY` clause with the `DISTINCT ON(expression)` to make the reuslt set predictable.
+It is good practice to always use the `ORDER BY` clause with the `DISTINCT ON (expression)` to make the result set predictable.
 
 Notice that the `DISTINCT ON` expression must match the leftmost expression in the `ORDER BY` clause.
 
-### Examples: PostgreSQL `SELECT DISTINCT`
+## Examples: PostgreSQL `SELECT DISTINCT`
 
-Create a new table called `distinct_demo` and insert data into it for practicing the `DISTINCT` clause.
+### Setting Up a Temporary Test Database
 
-First, use the following `CREATE TABLE` statement to create the `distinct_demo` table that consists of three columns: `id`, `bcolor` and `fcolor`.
+To practice using the `DISTINCT` clause, we will create a temporary test database and a table called `distinct_demo`.
+
+#### 1. Creating a Temporary Test Database
+
+```sql
+CREATE DATABASE distinct_demo;
+```
+
+#### 2. Connecting to the Temporary Test Database
+
+```bash
+\c testdb
+```
+
+#### 3. Creating the `distinct_demo` Table and Inserting Data
 
 ```sql
 CREATE TABLE distinct_demo (
@@ -61,11 +75,7 @@ CREATE TABLE distinct_demo (
   bcolor VARCHAR,
   fcolor VARCHAR
 );
-```
 
-Second, insert some rows into the `distinct_demo` table using the following `INSERT` statement.
-
-```sql
 INSERT INTO distinct_demo (bcolor, fcolor)
 VALUES
   ('red', 'red'),
@@ -82,7 +92,7 @@ VALUES
   ('blue', 'blue');
 ```
 
-Third, query data from the `distinct_demo` table using the `SELECT` statement:
+#### 4. Querying Data from the `distinct_demo` Table
 
 ```sql
 SELECT
@@ -95,10 +105,9 @@ FROM
 
 <img src="img/34.png" width="180" />
 
-### Example: PostgreSQL `DISTINCT` one column
+## Example: PostgreSQL `DISTINCT` with One Column
 
-The following statement selects unique values in the `bcolor` column from the `t1`
-table and sorts the result set in alphabetical order by using the `ORDER BY` clause.
+The following statement selects unique values in the `bcolor` column from the `distinct_demo` table and sorts the result set in alphabetical order by using the `ORDER BY` clause.
 
 ```sql
 SELECT
@@ -111,7 +120,7 @@ ORDER BY
 
 <img src="img/35.png" width="170" />
 
-### Example: PostgreSQL `DISTINCT` multiple columns
+## Example: PostgreSQL `DISTINCT` with Multiple Columns
 
 The following statement demonstrates how to use the `DISTINCT` clause on multiple columns.
 
@@ -129,12 +138,12 @@ ORDER BY
 <img src="img/36.png" width="190" />
 
 Because we specified both `bcolor` and `fcolor` columns in the `SELECT DISTINCT` clause, PostgreSQL combined the values in both `bcolor` and `fcolor` columns to evaluate the uniqueness of the rows.
-
 The query returns the unique combination of `bcolor` and `fcolor` from the `distinct_demo` table.
-Notice that the `distinct_demo` table has two rows with `red` value in both `bcolor` and `fcolor` columns.
-When we applied the `DISTINCT` keyword to both columns, one row was removed from the result set because it is the duplicate.
 
-### Example: PostgreSQL `DISTINCT ON`
+Notice that the `distinct_demo` table has two rows with `red` value in both `bcolor` and `fcolor` columns.
+When we applied the `DISTINCT` keyword to both columns, one row was removed from the result set because it is a duplicate.
+
+## Example: PostgreSQL `DISTINCT ON`
 
 The following statement sorts the result set by the `bcolor` and `fcolor`, and then for each group of duplicates, it keeps the first row in the returned result set.
 

@@ -1,8 +1,8 @@
-## PostgreSQL `FETCH`
+# PostgreSQL `FETCH`
 
 **Summary**: This section describes how to use the PostgreSQL `FETCH` clause to retrieve a portion of rows returned by a query.
 
-### Introduction to PostgreSQL `FETCH` clause
+## Introduction to PostgreSQL `FETCH` clause
 
 To constrain the number of rows returned by a query, you often use the `LIMIT` clause.
 The `LIMIT` clause is widely used by many relational database management systems such as MySQL, H2, and HSQLDB.
@@ -32,16 +32,18 @@ Because the order of rows stored in the table is unspecified, you should always 
 Note that the `OFFSET` clause must come before the `FETCH` clause in SQL 2008.
 However, `OFFSET` and `FETCH` clauses can appear in any order in PostgreSQL.
 
-### `FETCH` vs. `LIMIT`
+## `FETCH` vs. `LIMIT`
 
 The `FETCH` clause is functionally equivalent to the `LIMIT` clause.
 If you plan to make your application compatible with other database systems, you should use the `FETCH` clause because it follows the standard SQL.
 
-### PostgreSQL `FETCH` examples
+## PostgreSQL `FETCH` examples
 
 Let's use the `film` table in the `dvdrental` sample database for the demonstration.
 
 ![45.png](img/46.png)
+
+### Example 1: Using PostfreSQL `FETCH` to Select the First Row
 
 The following query uses thw `FETCH` clause to select the first film sorted by titles in ascending order:
 
@@ -58,7 +60,7 @@ FETCH FIRST ROW ONLY;
 
 <img src="img/50.png" width="210">
 
-It is equivalent to the following query:
+The above query is equivalent to the following query:
 
 ```sql
 SELECT
@@ -71,6 +73,8 @@ ORDER BY
 FETCH FIRST 1 ROW ONLY;
 ```
 
+### Example 2: Using PostgreSQL `FETCH` to Select the First Five Rows
+
 The following query uses the `FETCH` clause to select the first five films sorted by title:
 
 ```sql
@@ -81,10 +85,12 @@ FROM
   film
 ORDER BY
   title
-FETCH FIRST 5 ROW ONLY;
+FETCH FIRST 5 ROWS ONLY;
 ```
 
 <img src="img/51.png" width="230">
+
+### Example 3: Using PostgreSQL `FETCH` with `OFFSET`
 
 The following statement returns the next five films after the first five films sorted by titles:
 
@@ -97,7 +103,7 @@ FROM
 ORDER BY
   title
 OFFSET 5 ROWS
-FETCH FIRST 5 ROW ONLY;
+FETCH NEXT 5 ROWS ONLY;
 ```
 
 <img src="img/52.png" width="230">

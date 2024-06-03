@@ -1,25 +1,46 @@
 # PostgreSQL Joins
 
-**Summary**: The sections discusses various kinds of PostgreSQL join operations including
-- inner join
-- left join
-- right join
-- full outer join
+**Summary**: The sections discusses various kinds of PostgreSQL join operations including:
 
-PostgreSQL join is used to combine columns from one (self-join) or more tables based on the values of the common columns between related tables.
-The common columns are typically the primary key columns of the first table and the foreign key columns of the second table.
-PostgreSQL supports the following join operations:
 - inner join
 - left join
 - right join
 - full outer join
 - cross join
 - natural join
-- a special kind of join called self-join
+- self-join
 
-## Setting up the sample tables
+PostgreSQL join is used to combine columns from one (self-join) or more tables based on the values of the common columns between related tables.
+The common columns are typically the primary key columns of the first table and the foreign key columns of the second table.
+PostgreSQL supports the following join operations:
+
+- inner join
+- left join
+- right join
+- full outer join
+- cross join
+- natural join
+- self-join
+
+## Setting Up the Sample Tables
+
+To practice using joins, we will create a temporary test database and tables called `basket_a` and `basket_b` that store fruits.
+
+### Creating a Temporary Test Database
+
+```sql
+CREATE DATABASE testdb;
+```
+
+```bash
+\c testdb
+```
+
+### Creating the `basket_a` and `basket_b` Tables and Inserting Data
 
 Suppose you have two tables called `basket_a` and `basket_b` that store fruits:
+
+### Creating the Tables
 
 ```sql
 CREATE TABLE basket_a (
@@ -31,7 +52,11 @@ CREATE TABLE basket_b (
   b INT PRIMARY KEY,
   fruit_b VARCHAR (100) NOT NULL
 );
+```
 
+### Inserting Data
+
+```sql
 INSERT INTO basket_a (a, fruit_a)
 VALUES
   (1, 'Apple'),
@@ -47,9 +72,11 @@ VALUES
   (4, 'Pear');
 ```
 
-The tables have some common fruits such as `apple` and `orange`.
+Notice that the tables have some common fruits such as `apple` and `orange`.
 
-Confirm that the following statement returns the displayed data from the `basket_a` table:
+### Confirming the Data
+
+Confirm that the following statement returns the expected data from the `basket_a` table:
 
 ```sql
 SELECT * FROM basket_a;
@@ -57,7 +84,7 @@ SELECT * FROM basket_a;
 
 <img src="img/69.png" width="200" />
 
-Confirm that the following statement returns the displayed data from the `basket_a` table:
+Confirm that the following statement returns the expected data from the `basket_b` table:
 
 ```sql
 SELECT * FROM basket_b;
@@ -65,7 +92,7 @@ SELECT * FROM basket_b;
 
 <img src="img/70.png" width="200" />
 
-## PostgreSQL inner join
+## PostgreSQL Inner Join
 
 The following statement joins the first table (`basket_a`) with the second table (`basket_b`) by matching the values in the `fruit_a` and `fruit_b` columns.
 
@@ -83,16 +110,16 @@ INNER JOIN basket_b
 
 <img src="img/71.png" width="200" />
 
-The inner join examines each row in the first table (`basket_a`).
+The **inner join** examines each row in the first table (`basket_a`).
 It compares the value in the `fruit_a` column of each row in the second table (`basket_b`).
 If these values are equal, the inner join creates a new row that contains columns from both tables and adds this new row to the result set.
 The following Venn diagram illustrates the inner join:
 
 <img src="img/72.png" width="200" />
 
-## PostgreSQL left join
+## PostgreSQL Left Join
 
-The following statement uses the left join clause to join the `basket_a` table with the `basket_b` table.
+The following statement uses the `LEFT JOIN` clause to join the `basket_a` table with the `basket_b` table.
 In the left join context, the first table is called the **left table** and the second table is called the **right table**.
 
 ```sql
@@ -112,9 +139,12 @@ LEFT JOIN basket_b
 The left join starts selecting data from the left table.
 It compares values in the `fruit_a` column with the values in the `fruit_b` column in the `basket_b` table.
 
-If these values are equal, the left join creates a new row that contains columns of both tables and adds this new row to the result set. (See row #1 and row #2 in the result set.
+If these values are equal, the left join creates a new row that contains columns of both tables and adds this new row to the result set.
+(See row #1 and row #2 in the result set.
 
-In case the values are not equal, the left join also creates a new row that contains columns from both tables and adds it to the result set. However, it fills the columns of the right table (`basket_b`) with `NULL`. (See row #3 and row #4 in the result set.)
+In case the values are not equal, the left join also creates a new row that contains columns from both tables and adds it to the result set.
+However, it fills the columns of the right table (`basket_b`) with `NULL`.
+(See row #3 and row #4 in the result set.)
 
 The following Venn diagram illustrates the left join:
 
@@ -151,7 +181,7 @@ The right join is a reversed version of the left join.
 The right join starts selecting data from the right table.
 It compares each value in the `fruit_b` column of every row in the right table (`basket_b`) with each value in the `fruit_a` column of every row in the left table (`basket_a`).
 
-If these values are not equal, the right join creates a new row that contains columns from both tables.
+If these values are equal, the right join creates a new row that contains columns from both tables.
 
 In case these values are not equal, the right join also creates a new row that contains columns from both tables.
 However, it fills the columns in the left table with `NULL`.
@@ -194,9 +224,7 @@ WHERE a IS NULL;
 
 <img src="img/79.png" width="200" />
 
-<blockquote>
-The <code>RIGHT JOIN</code> and <code>RIGHT OUTER JOIN</code> are the same therefore you can use them interchangeably.
-</blockquote>
+> The `RIGHT JOIN` and `RIGHT OUTER JOIN` are the same therefore you can use them interchangeably.
 
 The following Venn diagram illustrates the right join that returns rows from the right table that do not have matching rows in the left table.
 
@@ -227,7 +255,7 @@ The following Venn diagram illustrates the full outer join:
 
 <img src="img/82.png" width="200" />
 
-To return rows in a table that do not have matching rows in the other, you use the full join with a `WHERE` clause like this:
+To return rows in a table that do not have matching rows in the other, you use the full join with a `WHERE` clause:
 
 ```sql
 SELECT

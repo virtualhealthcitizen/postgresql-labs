@@ -1,6 +1,8 @@
-**Summary**: This section describes how to use the PostgreSQL `LIKE` ans `ILIKE` operators to query data using pattern matchings.
+# PostgreSQL `LIKE` Operator
 
-## Introduction to the PostgreSQL `LIKE` operator
+**Summary**: This section describes how to use the PostgreSQL `LIKE` ans `ILIKE` operators to query data using pattern matching.
+
+## Introduction to the PostgreSQL `LIKE` Operator
 
 Suppose that you want to find a customer but you do not remember her name exactly.
 However, you just remember that her name begins with something like `Jen`.
@@ -27,14 +29,17 @@ Notice that the `WHERE` clause contains a special expression: the `first_name`, 
 The string `Jen%` is called a **pattern**.
 
 The query returns rows whose values in the `first_name` column begin with `Jen` and may be followed by any sequence of characters.
-This technique is called pattern matching.
+This technique is called **_pattern matching_**.
 
 You construct a pattern by combining literal values with wildcard characters and use the `LIKE` and `NOT LIKE` operator to find the matches.
 PostgreSQL provides you with two wildcards.
 
-- Percent sign (`%`) matches any sequence of zero or more characters.
-- Underscore sign (`_`) matches any single character.
+- **Percent sign** (`%`) matches any sequence of zero or more characters.
+- **Underscore sign** (`_`) matches any single character.
+
 The syntax of PostgreSQL `LIKE` operator is as follows:
+
+### Syntax of the PostgreSQL `LIKE` Operator
 
 ```sql
 value LIKE pattern
@@ -52,11 +57,11 @@ The `NOT LIKE` operator returns true when the `value` does not match the `patter
 
 If the pattern does not contain any wildcard character, the `LIKE` operator behaves like the equal (`=`) operator.
 
-### PostgreSQL `LIKE` operator - pattern matching examples
+## PostgreSQL `LIKE` Operator - Pattern Matching Examples
 
 Let's take some examples of using the `LIKE` operator.
 
-#### PostgreSQL `LIKE` examples
+### Example 1: Basic `LIKE` Operator Usage
 
 See the following example:
 
@@ -64,20 +69,18 @@ See the following example:
 SELECT
    'foo' LIKE 'foo',  -- true
    'foo' LIKE 'f%',   -- true
-   'foo' LIKE '_o_,   -- true
+   'foo' LIKE '_o_',   -- true
    'bar' LIKE 'b_';   -- false
 ```
 
-How it works:
-
 - The first expression returns true because the `foo` pattern does not contain any wildcard character so the `LIKE` operator acts like the equal (`=`) operator.
-- The second expression returns true because it matches any stringn that begins with the letter `f` followed by any number of characters.
-- The third expression returns true because the pattern (`_o_`) matches any string that begins with any single character, followed by the letter `o` and ended with any single character.
-- The fourth expression returns false because the pattern `b_` matches any string that begins with the letter `b` and followed by any single character.
+- The second expression returns true because it matches any string that begins with the letter `f` followed by any number of characters.
+- The third expression returns true because the pattern (`_o_`) matches any string that begins with any single character, followed by the letter `o` and ends with any single character.
+- The fourth expression returns false because the pattern `b_` matches any string that begins with the letter `b`, followed by any single character.
 
 It's possible to use wildcards at the beginning and/or end of the pattern.
 
-For example, the following query returns customers whose first name contains `er` string like `Jenifer`, `Kimberly`, etc.
+For example, the following query returns customers whose first name contains a string `er`, like `Jenifer`, `Kimberly`, etc.
 
 ```sql
 SELECT
@@ -115,9 +118,9 @@ The pattern `_her%` matches any string that:
 - And is followed by the literal string `her`.
 - And is ended with any sequence of characters.
 
-The returned first names are C**her**yl, S**her**ri, S**her**ry, T**her**esa.
+The returned first names are C**her**yl, S**her**ri, S**her**ry, and T**her**esa.
 
-#### PostgreDQL `NOT LIKE` examples
+### PostgreSQL `NOT LIKE` Operator Usage
 
 The following query uses the `NOT LIKE` operator to find customers whose first names do not being with `Jen`:
 
@@ -135,7 +138,7 @@ ORDER BY
 
 <img src="img/65.png" width="250" />
 
-### PostgreSQL extensions of `LIKE` operator
+## PostgreSQL extensions of `LIKE` operator
 
 PostgreSQL supports the `ILIKE` operator that works like the `LIKE` operator.
 In addition, the `ILIKE` operator matches a value case-insensitively. For example:

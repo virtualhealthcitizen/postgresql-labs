@@ -1,8 +1,10 @@
+# PostgreSQL `IS NULL` Operator
+
 **Summary**: This section discusses how to use the PostgreSQL `IS NULL` operator to check if a value is `NULL` or not.
 
 ## Introduction to the `NULL` and `IS NULL` operators
 
-In the database world `NULL` means missing information or not applicable.
+In the database world, `NULL` means missing information or not applicable.
 `NULL` is not a value, therefore you cannot compare it with any other values like numbers or strings.
 The comparison of `NULL` with a value will always result in `NULL`, which means an unknown result.
 
@@ -27,11 +29,9 @@ CREATE TABLE contacts(
 );
 ```
 
-<blockquote>
-Learn how to create a new table in the <a href="008_create_a_table.md">Create a table</a> section.
-<br />
-For now, just execute the above statement to create the <code>contacts</code> table.
-</blockquote>
+> Learn how to create a new table in the <a href="008_create_a_table.md">Create a table</a> section.
+> 
+> For now, just execute the above statement to create the `contacts` table.
 
 If you get an error while executing the `CREATE TABLE` statement, your PostgreSQL version may not support the identity column syntax.
 In this case, you can use the following statement to create the table:
@@ -101,9 +101,9 @@ Here is the output:
 
 <img src="img/67.png" width="370" />
 
-### PostgreSQL `IS NOT NULL` operator
+## PostgreSQL `IS NOT NULL` operator
 
-To check if a value is not `NULL`, you use the `IS NOT NULL` operator:
+To check if a value is **_not_** `NULL`, you use the `IS NOT NULL` operator:
 
 ```
 value IS NOT NULL

@@ -1,1 +1,0 @@
-# Exercises: Table aliases
