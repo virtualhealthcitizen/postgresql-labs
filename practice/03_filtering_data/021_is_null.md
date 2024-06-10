@@ -7,13 +7,13 @@ To practice using the `IS NULL` and `IS NOT NULL` operators, we will create a te
 ### 1. Creating a Temporary Test Database
 
 ```sql
-CREATE DATABASE test_contacts;
+CREATE DATABASE testdb;
 ```
 
 ### 2. Connecting to the Temporary Test Database
 
 ```bash
-\c test_contacts
+\c testdb
 ```
 
 ### 3. Creating the `test_contacts` Table and Inserting Data
@@ -86,7 +86,7 @@ WHERE email IS NULL;
 After completing the exercises, you may want to clean up by dropping the test database:
 
 ```sql
-DROP DATABASE test_contacts;
+DROP DATABASE testdb;
 ```
 
 ## Summary

@@ -7,13 +7,13 @@ To practice using the `FETCH` clause, we will create a temporary test database a
 ### 1. Creating a Temporary Test Database
 
 ```sql
-CREATE DATABASE test_film;
+CREATE DATABASE testdb;
 ```
 
 ### 2. Connecting to the Temporary Test Database
 
 ```bash
-\c test_film
+\c testdb
 ```
 
 ### 3. Creating the `test_film` Table and Inserting Data
@@ -100,7 +100,7 @@ FETCH FIRST 3 ROWS ONLY;
 After completing the exercises, you may want to clean up by dropping the test database:
 
 ```sql
-DROP DATABASE test_film;
+DROP DATABASE testdb;
 ```
 
 ## Summary

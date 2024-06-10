@@ -7,13 +7,13 @@ To practice using the `LIKE` and `ILIKE` operators, we will create a temporary t
 ### 1. Creating a Temporary Test Database
 
 ```sql
-CREATE DATABASE test_customer;
+CREATE DATABASE testdb;
 ```
 
 ### 2. Connecting to the Temporary Test Database
 
 ```bash
-\c test_customer
+\c testdb
 ```
 
 ### 3. Creating the `test_customer` Table and Inserting Data
@@ -91,7 +91,7 @@ WHERE first_name ILIKE 'JEN%';
 After completing the exercises, you may want to clean up by dropping the test database:
 
 ```sql
-DROP DATABASE test_customer;
+DROP DATABASE testdb;
 ```
 
 ## Summary

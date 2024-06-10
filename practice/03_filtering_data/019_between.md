@@ -9,13 +9,13 @@ To practice using the `BETWEEN` operator, we will create a temporary test databa
 ### 1. Creating a Temporary Test Database
 
 ```sql
-CREATE DATABASE test_payment;
+CREATE DATABASE testdb;
 ```
 
 ### 2. Connecting to the Temporary Test Database
 
 ```bash
-\c test_payment
+\c testdb
 ```
 
 ### 3. Creating the `test_payment` Table and Inserting Data

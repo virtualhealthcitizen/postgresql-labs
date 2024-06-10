@@ -1,7 +1,5 @@
 # Exercises: Create a Table
 
----
-
 ### **Create a Table**
 
 Creating tables in PostgreSQL involves defining the table structure with columns, data types, and constraints. Below is a detailed guide on creating tables.
