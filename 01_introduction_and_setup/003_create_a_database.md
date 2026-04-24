@@ -16,3 +16,18 @@ CREATE DATABASE db_name
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 ```
+
+### Example
+
+```sql
+CREATE DATABASE session_db
+    WITH
+    OWNER = postgres
+    TEMPLATE = postgres
+    ENCODING = 'UTF-8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+```
